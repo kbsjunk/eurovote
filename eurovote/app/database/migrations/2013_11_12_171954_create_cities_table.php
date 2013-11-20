@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePerformersTable extends Migration {
+class CreateCitiesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreatePerformersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('performers', function(Blueprint $table) {
+		Schema::create('cities', function(Blueprint $table) {
 			
 			$table->increments('id');
 			$table->string('name')->index();
@@ -22,10 +22,9 @@ class CreatePerformersTable extends Migration {
 			$table->string('disambig')->nullable();
 			$table->text('descr');
 
-			$table->boolean('is_group');
-			$table->integer('person_id')->nullable()->unsigned()->index();
+			$table->boolean('is_former');
+			$table->integer('country_id')->nullable()->unsigned()->index();
 
-			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
@@ -38,7 +37,7 @@ class CreatePerformersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('performers');
+		Schema::drop('cities');
 	}
 
 }

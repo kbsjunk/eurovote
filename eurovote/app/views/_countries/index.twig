@@ -1,0 +1,37 @@
+<table>
+	{% for country in countries %}
+	<tr>
+		<td>
+			{{ country.name }}
+		</td>
+
+		<td>
+			{{ country.name_native }}
+		</td>
+
+		<td>
+			{{ country.sortas }}
+		</td>
+
+		<td>
+			{{ country.slug }}
+		</td>
+
+		<td>
+			{{ country.disambig }}
+		</td>
+
+		<td>
+			{{ country.descr }}
+		</td>
+
+		<td>
+			{{ country.code }}
+		</td>
+
+		<td>
+			{{ country.is_former }}
+		</td>
+	</tr>
+	{% endfor %}
+</table>

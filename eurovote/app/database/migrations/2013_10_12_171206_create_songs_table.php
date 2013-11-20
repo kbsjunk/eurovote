@@ -13,13 +13,18 @@ class CreateSongsTable extends Migration {
 	public function up()
 	{
 		Schema::create('songs', function(Blueprint $table) {
+			
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->index();
+			$table->string('name_native')->nullable();
 			$table->string('sortas')->nullable();
-			$table->string('slug')->nullable();
+			$table->string('slug')->nullable()->index();
 			$table->string('disambig')->nullable();
-			$table->integer('country_id')->nullable();
-			$table->integer('contest_id')->nullable();
+			$table->text('descr');
+
+			$table->integer('country_id')->nullable()->unsigned()->index();
+			$table->integer('contest_id')->nullable()->unsigned()->index();
+
 			$table->softDeletes();
 			$table->timestamps();
 		});

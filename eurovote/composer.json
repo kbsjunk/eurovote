@@ -6,12 +6,12 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 
-		"rcrowe/twigbridge": "dev-master"
+		"rcrowe/twigbridge": "dev-master",
+		"laravelbook/ardent": "2.1.x"
 	},
 	"require-notyet" : {
 		"zizaco/confide": "1.0.x",
-		"zizaco/entrust": "dev-master",
-		"laravelbook/ardent": "2.1.x"
+		"zizaco/entrust": "dev-master"
 	},
 	"require-dev" : {
 		"way/generators": "1.0.*@dev"

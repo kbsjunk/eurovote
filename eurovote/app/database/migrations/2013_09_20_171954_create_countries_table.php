@@ -13,13 +13,19 @@ class CreateCountriesTable extends Migration {
 	public function up()
 	{
 		Schema::create('countries', function(Blueprint $table) {
+
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->index();
 			$table->string('name_native')->nullable();
 			$table->string('sortas')->nullable();
-			$table->string('slug')->nullable();
+			$table->string('slug')->nullable()->index();
+			$table->string('disambig')->nullable();
 			$table->text('descr');
-			$table->string('tld')->nullable();
+
+			$table->string('code')->nullable();
+			$table->boolean('is_former');
+
+
 			$table->timestamps();
 		});
 	}

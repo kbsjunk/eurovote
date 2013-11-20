@@ -18,7 +18,7 @@ ClassLoader::addDirectories(array(
 	app_path().'/models',
 	app_path().'/database/seeds',
 
-));
+	));
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +81,40 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+///////////////////////////////////////////
+
+Form::macro('arrayField', function($type, $name, $values = null, $add = true, $options = array())
+{
+	if ( ! isset($options['name'])) $options['name'] = $name;
+
+	$id = Form::getIdAttribute($name, $options);
+
+	// $value = $this->getValueAttribute($name, $value);
+
+	$merge = compact('type', 'id');
+
+	$options = array_merge($options, $merge);
+	$options['name'] = $options['name'].'[]';
+
+	$return = '<div class="array-field">';
+
+	foreach ($values as $value) {
+		$return .= '<input'.HTML::attributes(array_merge($options, array('value' => $value))).'>';
+		if ( $add ) {
+			$return .= '<button class="array-field-delete btn btn-danger">x</button>';
+		}
+		$return .= '<br>';
+	}
+
+	if ( $add ) {
+		// $return .= '<input'.HTML::attributes($options).'><br>';
+		$return .= '<button class="array-field-add btn btn-primary">+</button>';
+		$return .= '<span class="array-field-format"><input'.HTML::attributes($options).'></span>';
+	} 
+
+	$return .= '</div>';
+
+	return $return;
+
+});
