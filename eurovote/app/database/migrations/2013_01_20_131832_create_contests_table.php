@@ -21,7 +21,7 @@ class CreateContestsTable extends Migration {
 			$table->integer('city_id')->nullable()->unsigned()->index();
 
 			$table->text('venue');
-			$table->text('voting_method');
+			// $table->text('voting_method');
 
 			$table->text('descr');
 

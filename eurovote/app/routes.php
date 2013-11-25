@@ -18,4 +18,8 @@ Route::get('/', function()
 
 Route::resource('countries', 'CountriesController');
 
-Route::resource('blahs', 'BlahsController');
+Route::get('crawler/contests', 'CrawlerController@contests');
+Route::get('crawler/contest/{id}', 'CrawlerController@contest');
+
+Route::get('slugger/cities', 'SluggerController@cities');
+Route::get('slugger/countries', 'SluggerController@countries');

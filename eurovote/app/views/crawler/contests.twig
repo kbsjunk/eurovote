@@ -1,0 +1,49 @@
+<html>
+<head><title>Crawler - Contests</title></head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Contest_ID</th>
+				<th>Year</th>
+				<th>City</th>
+				<th>City_ID</th>
+				<th>Country</th>
+				<th>Country_ID</th>
+				<th>URL</th>
+				<th>Crawled?</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for contest in contests %}
+			{% if contest.contest %}
+			<tr>
+				<td>{{ contest.contest.id }}</td>
+				<td>{{ contest.year }}</td>
+				<td>{{ contest.city }}</td>
+				<td>{{ contest.contest.city.id }}</td>
+				<td>{{ contest.contest.city.country.name }}</td>
+				<td>{{ contest.contest.city.country.id }}</td>
+				<td><a href="{{ contest.url }}">View</a> &middot; <a href="{{ contest.url }}">Crawl</a></td>
+				<td>{{ contest.contest.ev_retrieved }}</td>
+				<td></td>
+			</tr>
+			{% else %}
+			<tr>
+				<td>-</td>
+				<td>{{ contest.year }}</td>
+				<td>{{ contest.city }} = {{ form_select('city_id', all.cities, contest.guess.city.id, {'name':'city_id[]'} ) }}</td>
+				<td>? {{ contest.guess.city.id }}</td>
+				<td>-</td>
+				<td>-</td>
+				<td><a href="{{ contest.url }}">View</a> &middot; <a href="{{ contest.url }}">Crawl</a></td>
+				<td>-</td>
+				<td></td>
+			</tr>
+			{% endif %}
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

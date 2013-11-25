@@ -7,7 +7,10 @@
 		"laravel/framework": "4.0.*",
 
 		"rcrowe/twigbridge": "dev-master",
-		"laravelbook/ardent": "2.1.x"
+		"laravelbook/ardent": "2.1.x",
+		"cviebrock/eloquent-sluggable": "dev-master",
+
+		"fabpot/goutte": "1.0.*@dev"
 	},
 	"require-notyet" : {
 		"zizaco/confide": "1.0.x",
@@ -23,6 +26,7 @@
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
+			"app/eurovote/Crawler.php",
 			"app/tests/TestCase.php"
 		]
 	},
