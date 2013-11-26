@@ -23,3 +23,4 @@ Route::get('crawler/contest/{id}', 'CrawlerController@contest');
 
 Route::get('slugger/cities', 'SluggerController@cities');
 Route::get('slugger/countries', 'SluggerController@countries');
+Route::get('slugger/contests', 'SluggerController@contests');

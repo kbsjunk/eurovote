@@ -1,15 +1,21 @@
 <html>
-<head><title>Crawler - Contests</title></head>
+<head><title>Crawler - Contests</title>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	html,body,p,table,td,th {
+		font-size:12px;
+	}
+	</style>
+</head>
 <body>
-	<table>
+	<table class="table table-bordered table-striped table-hover table-condensed">
 		<thead>
 			<tr>
 				<th>Contest_ID</th>
 				<th>Year</th>
 				<th>City</th>
-				<th>City_ID</th>
 				<th>Country</th>
-				<th>Country_ID</th>
+				<th>Final Date</th>
 				<th>URL</th>
 				<th>Crawled?</th>
 				<th></th>
@@ -19,27 +25,38 @@
 			{% for contest in contests %}
 			{% if contest.contest %}
 			<tr>
-				<td>{{ contest.contest.id }}</td>
+				<td><span class="badge pull-right">{{ contest.contest.id }}</span></td>
 				<td>{{ contest.year }}</td>
-				<td>{{ contest.city }}</td>
-				<td>{{ contest.contest.city.id }}</td>
-				<td>{{ contest.contest.city.country.name }}</td>
-				<td>{{ contest.contest.city.country.id }}</td>
-				<td><a href="{{ contest.url }}">View</a> &middot; <a href="{{ contest.url }}">Crawl</a></td>
+				<td>{{ contest.city }} <span class="badge pull-right">{{ contest.contest.city.id }}</span></td>
+				<td>{{ contest.contest.city.country.name }} <span class="badge pull-right">{{ contest.contest.city.country.id }}</span></td>
+				<td>{{ contest.contest.final_date }}</td>
+				<td>
+					<div class="btn-group btn-group-xs">
+						<a href="{{ contest.url }}" class="btn btn-default">View</a><a href="{{ contest.url }}" class="btn btn-default">Crawl</a>
+					</div>
+				</td>
 				<td>{{ contest.contest.ev_retrieved }}</td>
 				<td></td>
 			</tr>
 			{% else %}
 			<tr>
-				<td>-</td>
-				<td>{{ contest.year }}</td>
-				<td>{{ contest.city }} = {{ form_select('city_id', all.cities, contest.guess.city.id, {'name':'city_id[]'} ) }}</td>
-				<td>? {{ contest.guess.city.id }}</td>
-				<td>-</td>
-				<td>-</td>
-				<td><a href="{{ contest.url }}">View</a> &middot; <a href="{{ contest.url }}">Crawl</a></td>
-				<td>-</td>
-				<td></td>
+				<td rowspan="2"><span class="badge pull-right">&ndash;</span></td>
+				<td rowspan="2">{{ contest.year }}</td>
+				<td>{{ contest.city }} <span class="badge pull-right">{{ contest.guess.city.id }}</span></td>
+				<td rowspan="2">&mdash;</td>
+				<td rowspan="2">{{ contest.details.date }}</td>
+				<td rowspan="2">
+					<div class="btn-group btn-group-xs">
+						<a href="{{ contest.url }}" class="btn btn-default">View</a><a href="{{ contest.url }}" class="btn btn-default">Crawl</a>
+					</div>
+				</td>
+				<td rowspan="2">-</td>
+				<td rowspan="2"></td>
+			</tr>
+			<tr>
+				<td>
+					{{ form_select('city_id', all.cities, contest.guess.city.id, {'name':'city_id[]'} ) }}
+				</td>
 			</tr>
 			{% endif %}
 			{% endfor %}

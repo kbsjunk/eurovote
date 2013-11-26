@@ -1,6 +1,8 @@
 <?php
 
 class City extends Ardent {
+	use SluggerFind, SluggerSave;
+
 	protected $guarded = array();
 
 	public static $rules = array();
@@ -11,20 +13,9 @@ class City extends Ardent {
 		// 'groups'  => array(self::BELONGS_TO_MANY, 'Group', 'table' => 'groups_have_users')
 		);
 
-	public function getSlugName() {
-		return 'slug';
-	}
+	// public function scopeBySlug($query, $type)
+	// {
+	// 	return $query->where($instance->getSlugName(), '=', $slug);
+	// }
 
-	public static function findBySlug($slug, $columns = array('*'))
-	{
-		$slug = Str::slug($slug);
-		
-		$instance = new static;
-
-		if (is_array($slug))
-		{
-			return $instance->newQuery()->whereIn($instance->getSlugName(), $slug)->get($columns);
-		}
-		return $instance->newQuery()->where($instance->getSlugName(), '=', $slug)->first($columns);
-	}
 }

@@ -1,6 +1,9 @@
 <?php
 
 class Contest extends Ardent {
+	use SluggerFind;
+
+	public static $sluggable = false;
 
 	protected $guarded = array();
 
@@ -16,14 +19,4 @@ class Contest extends Ardent {
 		return 'year';
 	}
 
-	public static function findBySlug($slug, $columns = array('*'))
-	{
-		$instance = new static;
-
-		if (is_array($slug))
-		{
-			return $instance->newQuery()->whereIn($instance->getSlugName(), $slug)->get($columns);
-		}
-		return $instance->newQuery()->where($instance->getSlugName(), '=', $slug)->first($columns);
-	}
 }

@@ -56,6 +56,7 @@ class EurovisionCrawler {
 
 		foreach ($contests as &$contest) {
 			$contest['contest'] = \Contest::findbySlug($contest['year']);
+
 			if (!$contest['contest']) {
 				$contest['guess']['city'] = \City::findBySlug($contest['city']);
 			}
@@ -109,7 +110,7 @@ class EurovisionCrawler {
 				}
 
 				return array(
-					$key => $value,
+					Str::slug($key) => $value,
 					);
 			});
 

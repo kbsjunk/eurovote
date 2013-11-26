@@ -1,6 +1,8 @@
 <?php
 
 class Heat extends Ardent {
+	use Slugger;
+
 	protected $guarded = array();
 
 	public static $rules = array();

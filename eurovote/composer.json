@@ -23,10 +23,10 @@
 		"classmap": [
 			"app/commands",
 			"app/controllers",
+			"app/eurovote",
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
-			"app/eurovote/Crawler.php",
 			"app/tests/TestCase.php"
 		]
 	},

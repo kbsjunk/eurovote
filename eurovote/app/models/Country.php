@@ -1,6 +1,8 @@
 <?php
 
 class Country extends Ardent {
+	use SluggerFind, SluggerSave;
+
 	protected $guarded = array();
 
 	public static $rules = array();
@@ -24,20 +26,20 @@ class Country extends Ardent {
         $this->attributes['name_native'] = implode('|', $value);
     }
 
-	public function beforeSave() {
+	// public function beforeSave() {
 
-		if($this->isDirty('name') || is_null($this->slug)) {
+	// 	if($this->isDirty('name') || is_null($this->slug)) {
 
-			$slug = strtolower(Str::slug($this->name));
+	// 		$slug = strtolower(Str::slug($this->name));
 
-			if ($slug <> strtolower($this->name)) {
-				$this->slug = $slug;
-			}
-			else {
-				$this->slug = NULL;
-			}
+	// 		if ($slug <> strtolower($this->name)) {
+	// 			$this->slug = $slug;
+	// 		}
+	// 		else {
+	// 			$this->slug = NULL;
+	// 		}
 
-		}
-	}
+	// 	}
+	// }
 
 }
