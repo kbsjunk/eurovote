@@ -1,7 +1,7 @@
 <?php
 
 class Contest extends Ardent {
-	use SluggerFind;
+	use SluggerFind, Displayable;
 
 	public static $sluggable = false;
 
@@ -17,6 +17,17 @@ class Contest extends Ardent {
 
 	public function getSlugName() {
 		return 'year';
+	}
+
+	public function getNameAttribute() {
+		return $this->year;
+	}
+
+	public function getDisplayAttribute() {
+		return "Eurovision Song Contest {$this->name}";
+	}
+	public function getDisplayTextAttribute() {
+		return $this->getDisplayAttribute();
 	}
 
 }

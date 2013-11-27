@@ -2,6 +2,10 @@
 
 class CrawlerController extends BaseController {
 
+	public function postHandler($entity = false) {
+		dd(Input::all());
+	}
+
 	public function contests() {
 
 		$ev = new EurovisionCrawler('http://www.eurovision.tv/page/history/year');
@@ -30,7 +34,16 @@ class CrawlerController extends BaseController {
 
 	private function _all() {
 		$all = new stdClass();
-		$all->cities = City::lists('name', 'id');
+
+		$cities = City::orderBy('name')->orderBy('disambig')->get();
+		foreach ($cities as $city) {
+			$all->cities[$city->getKey()] = $city->display_text;
+		}
+
+		// $countries = Country::all();
+		// foreach ($countries as $country) {
+		// 	$all->countries[$country->getKey()] = $country->display_text;
+		// }
 
 		return $all;
 	}

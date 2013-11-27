@@ -5,62 +5,87 @@
 	html,body,p,table,td,th {
 		font-size:12px;
 	}
+	tr input, tr select {
+		margin: -6px;
+		border: 0;
+		padding: 2px;
+	}
 	</style>
 </head>
 <body>
+	{{ form_open({'action': ['CrawlerController@postHandler', 'contests']}) }}
 	<table class="table table-bordered table-striped table-hover table-condensed">
-		<thead>
-			<tr>
-				<th>Contest_ID</th>
-				<th>Year</th>
-				<th>City</th>
-				<th>Country</th>
-				<th>Final Date</th>
-				<th>URL</th>
-				<th>Crawled?</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for contest in contests %}
-			{% if contest.contest %}
-			<tr>
-				<td><span class="badge pull-right">{{ contest.contest.id }}</span></td>
-				<td>{{ contest.year }}</td>
-				<td>{{ contest.city }} <span class="badge pull-right">{{ contest.contest.city.id }}</span></td>
-				<td>{{ contest.contest.city.country.name }} <span class="badge pull-right">{{ contest.contest.city.country.id }}</span></td>
-				<td>{{ contest.contest.final_date }}</td>
-				<td>
-					<div class="btn-group btn-group-xs">
-						<a href="{{ contest.url }}" class="btn btn-default">View</a><a href="{{ contest.url }}" class="btn btn-default">Crawl</a>
-					</div>
-				</td>
-				<td>{{ contest.contest.ev_retrieved }}</td>
-				<td></td>
-			</tr>
-			{% else %}
-			<tr>
-				<td rowspan="2"><span class="badge pull-right">&ndash;</span></td>
-				<td rowspan="2">{{ contest.year }}</td>
-				<td>{{ contest.city }} <span class="badge pull-right">{{ contest.guess.city.id }}</span></td>
-				<td rowspan="2">&mdash;</td>
-				<td rowspan="2">{{ contest.details.date }}</td>
-				<td rowspan="2">
-					<div class="btn-group btn-group-xs">
-						<a href="{{ contest.url }}" class="btn btn-default">View</a><a href="{{ contest.url }}" class="btn btn-default">Crawl</a>
-					</div>
-				</td>
-				<td rowspan="2">-</td>
-				<td rowspan="2"></td>
-			</tr>
-			<tr>
-				<td>
-					{{ form_select('city_id', all.cities, contest.guess.city.id, {'name':'city_id[]'} ) }}
-				</td>
-			</tr>
-			{% endif %}
-			{% endfor %}
-		</tbody>
-	</table>
+		<colgroup>
+		<col style="width:30px;">
+		<col style="width:50px;">
+		<col>
+		<col style="width:180px;">
+	</colgroup>
+	<thead>
+		<tr>
+			<th>Contest_ID</th>
+			<th>Year</th>
+			<th colspan="2">City</th>
+			<th>Country</th>
+			<th>Final Date</th>
+			<th>URL</th>
+			<th>Crawled?</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for contest in contests %}
+		{% if contest.contest %}
+		<tr>
+			<td>
+				<span class="badge pull-right" title="{{ contest.contest.display_text }}">{{ contest.contest.id }}</span>
+			</td>
+			<td>{{ contest.year }}</td>
+			<td>{{ contest.city }}</td>
+			<td>
+				{#<span class="badge pull-right" title="{{ contest.contest.city.display_text }}">{{ contest.contest.city.id }}</span>#}
+				{{ form_select('contest['~contest.contest.id~'][city]', all.cities, contest.contest.city.id, {'class':'form-control input-sm col-xs-3'} ) }}
+			</td>
+			<td>
+				<span class="badge pull-right" title="{{ contest.contest.city.country.display_text }}">{{ contest.contest.city.country.id }}</span>
+				{{ contest.contest.city.country.name }}
+			</td>
+			<td>{{ contest.contest.final_date }}</td>
+			<td>
+				<div class="btn-group btn-group-xs">
+					<a href="{{ contest.url }}" class="btn btn-default">View</a><a href="{{ contest.url }}" class="btn btn-default">Crawl</a>
+				</div>
+			</td>
+			<td>{{ contest.contest.ev_retrieved }}</td>
+			<td></td>
+		</tr>
+		{% else %}
+		<tr class="warning">
+			<td>
+				<span class="badge pull-right" title="{{ contest.contest.display_text }}">{{ contest.contest.id }}</span>
+			</td>
+			<td>{{ form_text('new[][year]', contest.year, {'class':'form-control input-sm'}) }}</td>
+			<td>{{ contest.city }}</td>
+			<td>
+				{{ form_select('new[][city]', all.cities, contest.guess.city.id, {'class':'form-control input-sm'} ) }}
+			</td>
+			<td>
+				&mdash;
+			</td>
+			<td>{{ contest.contest.final_date }}</td>
+			<td>
+				<div class="btn-group btn-group-xs">
+					<a href="{{ contest.url }}" class="btn btn-default">View</a><a href="{{ contest.url }}" class="btn btn-default">Crawl</a>
+				</div>
+			</td>
+			<td>{{ contest.contest.ev_retrieved }}</td>
+			<td></td>
+		</tr>
+		{% endif %}
+		{% endfor %}
+	</tbody>
+</table>
+{{ form_submit('Save', {'class': 'btn btn-primary'}) }}
+{{ form_close() }}
 </body>
 </html>

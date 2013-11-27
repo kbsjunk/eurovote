@@ -1,7 +1,7 @@
 <?php
 
 class City extends Ardent {
-	use SluggerFind, SluggerSave;
+	use SluggerFind, SluggerSave, Displayable;
 
 	protected $guarded = array();
 
@@ -13,9 +13,6 @@ class City extends Ardent {
 		// 'groups'  => array(self::BELONGS_TO_MANY, 'Group', 'table' => 'groups_have_users')
 		);
 
-	// public function scopeBySlug($query, $type)
-	// {
-	// 	return $query->where($instance->getSlugName(), '=', $slug);
-	// }
+
 
 }
