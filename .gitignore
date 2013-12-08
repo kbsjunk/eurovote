@@ -216,3 +216,4 @@ pip-log.txt
 
 .wk/
 eurovote.old/
+*.sublime-workspace
