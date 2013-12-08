@@ -17,13 +17,7 @@ class Country extends Ardent {
 		return explode('|', $this->attributes[$attr]);
 	}
 
-	public function getNameNativeAttribute($value)
-	{
-		return explode('|', $value);
-	}
-	public function setNameNativeAttribute($value)
-    {
-        $this->attributes['name_native'] = implode('|', $value);
-    }
+
+
 
 }

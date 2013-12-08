@@ -13,6 +13,8 @@ class City extends Ardent {
 		// 'groups'  => array(self::BELONGS_TO_MANY, 'Group', 'table' => 'groups_have_users')
 		);
 
-
+	// public function title() {
+	// 	return $this;
+	// }
 
 }

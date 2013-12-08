@@ -116,7 +116,7 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'TwigBridge\TwigServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-
+		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
 		),
 
 	/*

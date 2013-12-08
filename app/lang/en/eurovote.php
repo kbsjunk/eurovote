@@ -21,7 +21,8 @@ return array(
 		''            => '',
 		''            => '',
 		''            => '',
-		''            => '',
 		),
+
+	'country' => 'Country',
 
 	);

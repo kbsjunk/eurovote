@@ -21,7 +21,7 @@ class CountriesController extends BaseController {
 	 */
 	public function index()
 	{
-		$countries = $this->country->all();
+		$countries = $this->country->orderBy('sortas')->orderBy('slug')->get();
 
 		return View::make('countries.index', compact('countries'));
 	}
@@ -67,7 +67,7 @@ class CountriesController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$country = $this->country->findOrFail($id);
+		$country = $this->country->findBySlug($id);
 
 		return View::make('countries.show', compact('country'));
 	}
@@ -80,7 +80,7 @@ class CountriesController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$country = $this->country->find($id);
+		$country = $this->country->findBySlug($id);
 
 		if (is_null($country))
 		{
@@ -103,7 +103,7 @@ class CountriesController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$country = $this->country->find($id);
+			$country = $this->country->findBySlug($id);
 			$country->update($input);
 
 			return Redirect::route('countries.show', $id);
@@ -123,7 +123,7 @@ class CountriesController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		$this->country->find($id)->delete();
+		$this->country->findBySlug($id)->delete();
 
 		return Redirect::route('countries.index');
 	}

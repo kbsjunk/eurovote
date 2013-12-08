@@ -1,6 +1,6 @@
-@extends('layouts.scaffold')
+{% extends 'layouts.scaffold' %}
 
-@section('main')
+{% block main %}
 
 <h1>Show Country</h1>
 
@@ -13,7 +13,7 @@
 			</th>
 
 			<td>
-				{{ $country->name }}
+				{{ country.name }}
 			</td>
 		</tr>
 
@@ -23,9 +23,9 @@
 			</th>
 
 			<td>
-				@foreach ($country->name_native as $name_native)
-				{{ $name_native }},
-				@endforeach
+				{% for name_native in country.name_native %}
+				{{ name_native }},
+				{% endfor %}
 			</td>
 		</tr>
 
@@ -35,7 +35,7 @@
 			</th>
 
 			<td>
-				{{ $country->sortas }}
+				{{ country.sortas }}
 			</td>
 		</tr>
 
@@ -45,7 +45,7 @@
 			</th>
 
 			<td>
-				{{ $country->slug }}
+				{{ country.slug }}
 			</td>
 		</tr>
 
@@ -55,7 +55,7 @@
 			</th>
 
 			<td>
-				{{ $country->disambig }}
+				{{ country.disambig }}
 			</td>
 		</tr>
 
@@ -65,7 +65,7 @@
 			</th>
 
 			<td>
-				{{ $country->descr }}
+				{{ country.descr }}
 			</td>
 		</tr>
 
@@ -75,7 +75,7 @@
 			</th>
 
 			<td>
-				{{ $country->code }}
+				{{ country.code }}
 			</td>
 		</tr>
 
@@ -85,22 +85,22 @@
 			</th>
 
 			<td>
-				{{ $country->is_former }}
+				{{ country.is_former }}
 			</td>
 		</tr>
 
 		<tr>
 			<td colspan="2">
-				{{ link_to_route('countries.edit', 'Edit', array($country->id), array('class' => 'btn btn-info')) }}
+				{{ link_to_route('countries.edit', 'Edit', [country.slug], {'class' : 'btn btn-info'}) }}
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2">
-				{{ Form::open(array('method' => 'DELETE', 'route' => array('countries.destroy', $country->id))) }}
-				{{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-				{{ Form::close() }}
+				{{ form_open({'method' : 'DELETE', 'route' : ['countries.destroy', country.slug]}) }}
+				{{ form_submit('Delete', {'class' : 'btn btn-danger'}) }}
+				{{ form_close() }}
 			</td>
 		</tr>
 	</tbody>
 </table>
-@stop
+{% endblock %}

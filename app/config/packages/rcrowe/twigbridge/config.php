@@ -116,6 +116,11 @@ return array(
         'trans_choice',
         // Miscellaneous
         'csrf_token',
+        'implode',
+        'explode',
+        // Asset Pipeline
+        'stylesheet_link_tag',
+        'javascript_include_tag',
     ),
 
     /*

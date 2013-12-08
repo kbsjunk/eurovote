@@ -17,6 +17,7 @@ Route::get('/', function()
 });
 
 Route::resource('countries', 'CountriesController');
+Route::resource('cities', 'CitiesController');
 
 Route::get('crawler/contests', 'CrawlerController@contests');
 Route::get('crawler/contest/{id}', 'CrawlerController@contest');

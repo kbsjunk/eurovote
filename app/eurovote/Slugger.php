@@ -24,6 +24,14 @@ trait SluggerFind {
 		return $instance->newQuery()->where($instance->getSlugName(), '=', $slug)->first($columns);
 	}
 
+	public function getSlugAttribute() {
+		if (!isset($this->attributes['slug'])) {
+			return Str::slug($this->slugName);
+		}
+
+		return $this->attributes['slug'];
+	}
+
 }
 
 trait SluggerSave {

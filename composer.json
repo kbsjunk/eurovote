@@ -10,6 +10,9 @@
 		"laravelbook/ardent": "2.1.x",
 		"cviebrock/eloquent-sluggable": "dev-master",
 
+		"smottt/wideimage": "dev-master",
+		"codesleeve/asset-pipeline": "dev-master",
+
 		"fabpot/goutte": "1.0.*@dev"
 	},
 	"require-notyet" : {

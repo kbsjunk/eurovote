@@ -1,0 +1,72 @@
+{% extends 'layouts.scaffold' %}
+
+{% block main %}
+
+<h1>All Countries</h1>
+
+<p>{{ link_to_route('countries.create', 'Add new country') }}</p>
+
+{% if countries.count %}
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<thead>
+		<tr>
+			<th>{{ trans('eurovote.model.name') }}</th>
+			<th>{{ trans('eurovote.model.name_native') }}</th>
+			<th>{{ trans('eurovote.model.sortas') }}</th>
+			<th>{{ trans('eurovote.model.slug') }}</th>
+			<th>{{ trans('eurovote.model.disambig') }}</th>
+			<th>{{ trans('eurovote.model.descr') }}</th>
+			<th>{{ trans('eurovote.model.code') }}</th>
+			<th>{{ trans('eurovote.model.is_former') }}</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		{% for country in countries %}
+		<tr>
+			<td>
+				{{ country.anchor }}
+			</td>
+
+			<td>
+				{{ implode(', ', country.name_native) }}
+			</td>
+
+			<td>
+				{{ country.sortas }}
+			</td>
+
+			<td>
+				{{ country.slug }}
+			</td>
+
+			<td>
+				{{ country.disambig }}
+			</td>
+
+			<td>
+				{{ country.descr }}
+			</td>
+
+			<td>
+				{{ country.code }}
+			</td>
+
+			<td>
+				{{ country.is_former }}
+			</td>
+			<td>{{ link_to_route('countries.edit', 'Edit', [country.slug], {'class' : 'btn btn-info btn-sm'}) }}</td>
+			<td>
+				{{ form_open({'method' : 'DELETE', 'route' : ['countries.destroy', country.slug]}) }}
+				{{ form_submit('Delete', {'class' : 'btn btn-danger btn-sm'}) }}
+				{{ form_close() }}
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% else %}
+There are no countries
+{% endif %}
+
+{% endblock %}

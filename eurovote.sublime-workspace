@@ -8,10 +8,26 @@
 	"buffers":
 	[
 		{
-			"file": "eurovote/composer.json",
+			"file": "app/controllers/CountriesController.php",
 			"settings":
 			{
-				"buffer_size": 975,
+				"buffer_size": 2438,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/eurovote/Displayable.php",
+			"settings":
+			{
+				"buffer_size": 890,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/countries/index.twig",
+			"settings":
+			{
+				"buffer_size": 1501,
 				"line_ending": "Windows"
 			}
 		}
@@ -19,11 +35,67 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 196.0,
+		"height": 104.0,
 		"selected_items":
 		[
 			[
+				"twig",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"seed",
+				"Laravel Artisan: DB:Seed"
+			],
+			[
+				"artisan db",
+				"Laravel Artisan: DB:Seed"
+			],
+			[
+				"dbseed",
+				"Laravel Artisan: DB:Seed"
+			],
+			[
+				"migrate",
+				"Laravel Artisan: Migrate"
+			],
+			[
+				"dump",
+				"Composer: Dump Autoload"
+			],
+			[
+				"coffee",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"artisan conf",
+				"Laravel Artisan: Config: Publish"
+			],
+			[
+				"artisan ass",
+				"Laravel Artisan: Asset: Publish"
+			],
+			[
+				"artisan",
+				"Laravel Artisan: Custom Command"
+			],
+			[
+				"composerinstall",
+				"Composer: Install"
+			],
+			[
 				"composer",
+				"Composer: Install"
+			],
+			[
+				"com",
 				"Composer: Validate composer.json"
 			],
 			[
@@ -31,15 +103,11 @@
 				"Composer: Validate composer.json"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"insta",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -56,6 +124,59 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/variables.less",
+		"/C/Users/Kit/Sites/eurovote/app/start/global.php",
+		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/application.css",
+		"/C/Users/Kit/Sites/eurovote/bootstrap/start.php",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/Users/Kit/Desktop/hosts",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/glyphicons.less",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/mixins.less",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/bootstrap.less",
+		"/C/Users/Kit/Sites/eurovote/app/views/cities/create.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/show.twig",
+		"/C/Users/Kit/Sites/eurovote/app/views/cities/show.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/cities/index.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/cities/edit.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/edit.twig",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/create.twig",
+		"/C/Users/Kit/Sites/eurovote/app/views/layouts/scaffold.twig",
+		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/home.less",
+		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/bootstrap/bootstrap.less",
+		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/bootstrap/variables.less",
+		"/C/Users/Kit/AppData/Local/Temp/7zOAC75.tmp/bootstrap.css",
+		"/C/Users/Kit/AppData/Local/Temp/7zO6E61.tmp/config.json",
+		"/C/Users/Kit/Sites/eurovote/app/config/packages/rcrowe/twigbridge/config.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/crawler/contests.twig",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/index.twig",
+		"/C/Users/Kit/Sites/eurovote/app/views/hello.twig",
+		"/C/Users/Kit/Sites/eurovote/app/models/City.php",
+		"/C/Users/Kit/Sites/eurovote/app/controllers/SluggerController.php",
+		"/C/Users/Kit/Sites/eurovote/app/eurovote/Slugger.php",
+		"/C/Users/Kit/Sites/eurovote/app/eurovote/Displayable.php",
+		"/C/Users/Kit/Sites/eurovote/app/routes.php",
+		"/C/Users/Kit/Sites/eurovote/app/controllers/CitiesController.php",
+		"/C/Users/Kit/Sites/eurovote/app/controllers/CountriesController.php",
+		"/C/Users/Kit/Sites/eurovote/app/lang/en/eurovote.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/show.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/index.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/edit.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/create.blade.php",
+		"/C/Users/Kit/Sites/eurovote/app/models/Country.php",
+		"/C/Users/Kit/Sites/eurovote/app/models/Contest.php",
+		"/C/Users/Kit/Sites/eurovote/app/database/seeds/CountriesTableSeeder.php",
+		"/C/Users/Kit/Sites/eurovote/app/database/seeds/DatabaseSeeder.php",
+		"/C/Users/Kit/Sites/eurovote/app/database/seeds/CitiesTableSeeder.php",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap.less",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/application.less",
+		"/C/Users/Kit/Sites/eurovote/app/provider/assets/stylesheets/bootstrap.less",
+		"/C/Users/Kit/Sites/eurovote/app/assets/javascripts/newscript.coffee",
+		"/C/Users/Kit/Sites/eurovote/composer.json",
+		"/C/Users/Kit/Sites/eurovote/app/config/app.php",
+		"/C/Users/Kit/Sites/eurovote/app/config/packages/codesleeve/asset-pipeline/config.php",
+		"/C/Users/Kit/Sites/eurovote/app/assets/javascripts/application.js",
+		"/C/Users/Kit/Sites/eurovote/eurovote/composer.json",
+		"/C/ProgramData/ComposerSetup/bin/composer.bat",
 		"/C/Users/Kit/AppData/Roaming/Sublime Text 2/Packages/Composer/composer-sublime.sublime-settings",
 		"/C/Users/Kit/AppData/Roaming/Sublime Text 2/Packages/User/composer-sublime.sublime-settings",
 		"/C/Users/Kit/Sites/fbbirthdays/functions.php",
@@ -74,9 +195,15 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Users\\Kit\\Sites\\eurovote\\provider\\assets\\stylesheets\\bootstrap",
+			"<open folders>",
+			"C:\\Users\\Kit\\Sites\\eurovote\\app\\views\\countries,C:\\Users\\Kit\\Sites\\eurovote\\app\\views\\cities",
+			"C:\\Users\\Kit\\Sites\\eurovote\\app\\views\\cities",
+			"",
+			"$1it"
 		]
 	},
 	"find_state":
@@ -84,6 +211,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"@list",
+			"array\\(([^)]*)\\)",
+			"@foreach \\((.*) as (.*)\\)",
+			"@endforeach",
+			"Form::",
+			"@stop",
+			"@section('main')",
+			"@extends('layouts.scaffold')",
+			"$",
+			"->",
+			"=>",
+			"FOrm::",
+			"->",
+			"$",
+			"Session::",
+			"->id",
+			"findBySlug",
+			"find",
+			"find(",
+			"find",
+			"([Cc])ountr",
+			"list",
 			"indent",
 			"reindent",
 			"htdocs",
@@ -96,6 +245,18 @@
 		"regex": false,
 		"replace_history":
 		[
+			"{$1}",
+			"{% for $1 in $2 %}",
+			"{% endfor %}",
+			"form_",
+			"{% endblock %}",
+			"{% block main %}",
+			"{% extends 'layouts.scaffold' %}",
+			"",
+			".",
+			":",
+			"->slug",
+			"$1it"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -106,32 +267,86 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "eurovote/composer.json",
+					"file": "app/controllers/CountriesController.php",
 					"settings":
 					{
-						"buffer_size": 975,
+						"buffer_size": 2438,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								348,
-								348
+								316,
+								316
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/eurovote/Displayable.php",
+					"settings":
+					{
+						"buffer_size": 890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								411,
+								411
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 44.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/countries/index.twig",
+					"settings":
+					{
+						"buffer_size": 1501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1358,
+								1358
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 608.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -141,11 +356,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -172,11 +387,15 @@
 	"menu_visible": true,
 	"output.composer":
 	{
-		"height": 100.0
+		"height": 167.0
+	},
+	"output.exec":
+	{
+		"height": 351.0
 	},
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -199,6 +418,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 328.0,
 	"status_bar_visible": true
 }

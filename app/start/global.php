@@ -100,17 +100,19 @@ Form::macro('arrayField', function($type, $name, $values = null, $add = true, $o
 	$return = '<div class="array-field">';
 
 	foreach ($values as $value) {
-		$return .= '<input'.HTML::attributes(array_merge($options, array('value' => $value))).'>';
+		$return .= '<div class="input-group"><input'.HTML::attributes(array_merge($options, array('value' => $value))).'>';
 		if ( $add ) {
-			$return .= '<button class="array-field-delete btn btn-danger">x</button>';
+			$return .= '<span class="input-group-btn">
+			<button class="array-field-delete btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+			</span>';
 		}
-		$return .= '<br>';
+		$return .= '</div><br>';
 	}
 
 	if ( $add ) {
 		// $return .= '<input'.HTML::attributes($options).'><br>';
-		$return .= '<button class="array-field-add btn btn-primary">+</button>';
-		$return .= '<span class="array-field-format"><input'.HTML::attributes($options).'></span>';
+		$return .= '<div class="input-group"><span class="input-group-btn"><button class="array-field-add btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button></span>';
+		$return .= '<span class="array-field-format"><input'.HTML::attributes($options).'></span></div>';
 	} 
 
 	$return .= '</div>';
@@ -118,3 +120,5 @@ Form::macro('arrayField', function($type, $name, $values = null, $add = true, $o
 	return $return;
 
 });
+
+// ---------------------------------------------------------------- //
