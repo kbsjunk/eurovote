@@ -10,5 +10,7 @@
  * but before any files alphabetically greater than 'application.css' 
  *
  *= require_tree .
- *= require bootstrap/bootstrap.less
+ * require bootstrap/bootstrap.less
+ *= require_directory kendo
+ *= require bootstrap/bootstrap-simple.less
  */

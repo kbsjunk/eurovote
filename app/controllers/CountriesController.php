@@ -19,11 +19,83 @@ class CountriesController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function insdex()
 	{
 		$countries = $this->country->orderBy('sortas')->orderBy('slug')->get();
 
 		return View::make('countries.index', compact('countries'));
+	}
+
+	public function index()
+	{
+
+		$countries = $this->country->orderBy('sortas')->orderBy('slug')->get();
+
+		$model = new \Kendo\Data\DataSourceSchemaModel();
+
+		$nameField = new \Kendo\Data\DataSourceSchemaModelField('name');
+		$nameField->type('string');
+
+		$nameNativeField = new \Kendo\Data\DataSourceSchemaModelField('name_native');
+		$nameNativeField->type('string');
+
+		$sortAsField = new \Kendo\Data\DataSourceSchemaModelField('sortas');
+		$sortAsField->type('string');
+
+		$disambigField = new \Kendo\Data\DataSourceSchemaModelField('disambig');
+		$disambigField->type('string');
+
+		$codeField = new \Kendo\Data\DataSourceSchemaModelField('code');
+		$codeField->type('string');
+
+		$isFormerField = new \Kendo\Data\DataSourceSchemaModelField('is_former');
+		$isFormerField->type('boolean');
+
+		$model->addField($nameField, $nameNativeField, $sortAsField, $disambigField, $codeField, $isFormerField);
+
+		$schema = new \Kendo\Data\DataSourceSchema();
+		$schema->model($model);
+		$dataSource = new \Kendo\Data\DataSource();
+
+		$dataSource->data($countries->toArray())
+		->schema($schema);
+
+		$grid = new \Kendo\UI\Grid('grid');
+
+		$nameColumn = new \Kendo\UI\GridColumn();
+		$nameColumn->field('name')
+		->title('Country');
+
+		$nameNativeColumn = new \Kendo\UI\GridColumn();
+		$nameNativeColumn->field('name_native')
+		->title('Local Name');
+
+		$disambigColumn = new \Kendo\UI\GridColumn();
+		$disambigColumn->field('disambig')
+		->title('Disambiguation');
+
+		$sortAsColumn = new \Kendo\UI\GridColumn();
+		$sortAsColumn->field('sort_as')
+		->title('Sort As');
+
+		$codeColumn = new \Kendo\UI\GridColumn();
+		$codeColumn->field('code')
+		->width('100px')
+		->title('Code');
+
+		$isFormerColumn = new \Kendo\UI\GridColumn();
+		$isFormerColumn->field('is_former')
+		->width('30px')
+		->title('Former');
+
+		$grid->addColumn($nameColumn, $nameNativeColumn, $sortAsColumn, $disambigColumn, $codeColumn, $isFormerColumn);
+		$grid->dataSource($dataSource);
+
+		// $grid->columnMenu(true);
+		$grid->sortable(true);
+		$grid->groupable(true);
+
+		return View::make('kendo.grid', array('contents' => $grid->render()));
 	}
 
 	/**
@@ -54,9 +126,9 @@ class CountriesController extends BaseController {
 		}
 
 		return Redirect::route('countries.create')
-			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+		->withInput()
+		->withErrors($validation)
+		->with('message', 'There were validation errors.');
 	}
 
 	/**
@@ -110,9 +182,9 @@ class CountriesController extends BaseController {
 		}
 
 		return Redirect::route('countries.edit', $id)
-			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+		->withInput()
+		->withErrors($validation)
+		->with('message', 'There were validation errors.');
 	}
 
 	/**

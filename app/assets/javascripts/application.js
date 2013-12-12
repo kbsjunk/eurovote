@@ -11,3 +11,6 @@
 // The available directives right now are require, require_directory, and require_tree
 // 	
 //= require_tree .
+//= require_directory kendo
+// require_directory jquery
+// require kendo/kendo.all.min.js
