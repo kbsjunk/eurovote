@@ -12,5 +12,5 @@
  *= require_tree .
  * require bootstrap/bootstrap.less
  *= require_directory kendo
- *= require bootstrap/bootstrap-simple.less
+ *= require bootstrap/bootstrap-custom.less
  */

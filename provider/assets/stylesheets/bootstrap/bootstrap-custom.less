@@ -1,7 +1,5 @@
-@font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 // Core variables and mixins
-@import "variables.less";
+@import "variables-custom.less";
 @import "mixins.less";
 
 // Reset
@@ -11,13 +9,18 @@
 // Core CSS
 @import "scaffolding.less";
 @import "type.less";
-@import "code.less";
+// @import "code.less";
 @import "grid.less";
-@import "tables.less";
-@import "forms.less";
-@import "buttons.less";
+// @import "tables.less";
+// @import "forms.less";
+// @import "buttons.less";
 
-
+html, body, p, td {
+	font-weight: 300;
+}
+strong, th {
+	font-weight: 500;
+}
 
 // Components
 // @import "component-animations.less";

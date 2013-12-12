@@ -3,6 +3,22 @@
 	{
 		"selected_items":
 		[
+			[
+				"code",
+				"codeField"
+			],
+			[
+				"disa",
+				"disambigField"
+			],
+			[
+				"sort",
+				"sortAsField"
+			],
+			[
+				"nat",
+				"nameNativeField"
+			]
 		]
 	},
 	"buffers":
@@ -11,23 +27,23 @@
 			"file": "app/controllers/CountriesController.php",
 			"settings":
 			{
-				"buffer_size": 2438,
+				"buffer_size": 4745,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/eurovote/Displayable.php",
+			"file": "app/assets/stylesheets/home.less",
 			"settings":
 			{
-				"buffer_size": 890,
+				"buffer_size": 83199,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/countries/index.twig",
+			"file": "app/views/kendo/grid.twig",
 			"settings":
 			{
-				"buffer_size": 1501,
+				"buffer_size": 98,
 				"line_ending": "Windows"
 			}
 		}
@@ -35,9 +51,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 81.0,
 		"selected_items":
 		[
+			[
+				"dump",
+				"Composer: Dump Autoload"
+			],
 			[
 				"twig",
 				"Set Syntax: HTML (Twig)"
@@ -65,10 +85,6 @@
 			[
 				"migrate",
 				"Laravel Artisan: Migrate"
-			],
-			[
-				"dump",
-				"Composer: Dump Autoload"
 			],
 			[
 				"coffee",
@@ -107,7 +123,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -124,9 +140,23 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/variables.less",
-		"/C/Users/Kit/Sites/eurovote/app/start/global.php",
+		"/C/Users/Kit/Sites/eurovote/app/assets/javascripts/application.js",
 		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/application.css",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/bootstrap-custom.less",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/variables-custom.less",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/bootstrap-simple.less",
+		"/C/Users/Kit/Sites/eurovote/app/views/layouts/scaffold.twig",
+		"/C/Users/Kit/Sites/eurovote/app/assets/javascripts/webfonts.js",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/scaffolding.less",
+		"/C/Users/Kit/Sites/eurovote/app/views/countries/index.twig",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/javascripts/jquery/jquery.js",
+		"/C/Users/Kit/Sites/eurovote/app/assets/javascripts/newscript.coffee",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/javascripts/application.css",
+		"/C/Users/Kit/Sites/eurovote/app/start/global.php",
+		"/C/Users/Kit/Sites/eurovote/composer.json",
+		"/C/Users/Kit/Sites/eurovote/app/eurovote/Displayable.php",
+		"/C/Users/Kit/Sites/eurovote/app/controllers/CountriesController.php",
+		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap/variables.less",
 		"/C/Users/Kit/Sites/eurovote/bootstrap/start.php",
 		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
 		"/C/Users/Kit/Desktop/hosts",
@@ -140,7 +170,6 @@
 		"/C/Users/Kit/Sites/eurovote/app/views/cities/edit.blade.php",
 		"/C/Users/Kit/Sites/eurovote/app/views/countries/edit.twig",
 		"/C/Users/Kit/Sites/eurovote/app/views/countries/create.twig",
-		"/C/Users/Kit/Sites/eurovote/app/views/layouts/scaffold.twig",
 		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/home.less",
 		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/bootstrap/bootstrap.less",
 		"/C/Users/Kit/Sites/eurovote/app/assets/stylesheets/bootstrap/variables.less",
@@ -148,15 +177,12 @@
 		"/C/Users/Kit/AppData/Local/Temp/7zO6E61.tmp/config.json",
 		"/C/Users/Kit/Sites/eurovote/app/config/packages/rcrowe/twigbridge/config.php",
 		"/C/Users/Kit/Sites/eurovote/app/views/crawler/contests.twig",
-		"/C/Users/Kit/Sites/eurovote/app/views/countries/index.twig",
 		"/C/Users/Kit/Sites/eurovote/app/views/hello.twig",
 		"/C/Users/Kit/Sites/eurovote/app/models/City.php",
 		"/C/Users/Kit/Sites/eurovote/app/controllers/SluggerController.php",
 		"/C/Users/Kit/Sites/eurovote/app/eurovote/Slugger.php",
-		"/C/Users/Kit/Sites/eurovote/app/eurovote/Displayable.php",
 		"/C/Users/Kit/Sites/eurovote/app/routes.php",
 		"/C/Users/Kit/Sites/eurovote/app/controllers/CitiesController.php",
-		"/C/Users/Kit/Sites/eurovote/app/controllers/CountriesController.php",
 		"/C/Users/Kit/Sites/eurovote/app/lang/en/eurovote.php",
 		"/C/Users/Kit/Sites/eurovote/app/views/countries/show.blade.php",
 		"/C/Users/Kit/Sites/eurovote/app/views/countries/index.blade.php",
@@ -170,11 +196,8 @@
 		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/bootstrap.less",
 		"/C/Users/Kit/Sites/eurovote/provider/assets/stylesheets/application.less",
 		"/C/Users/Kit/Sites/eurovote/app/provider/assets/stylesheets/bootstrap.less",
-		"/C/Users/Kit/Sites/eurovote/app/assets/javascripts/newscript.coffee",
-		"/C/Users/Kit/Sites/eurovote/composer.json",
 		"/C/Users/Kit/Sites/eurovote/app/config/app.php",
 		"/C/Users/Kit/Sites/eurovote/app/config/packages/codesleeve/asset-pipeline/config.php",
-		"/C/Users/Kit/Sites/eurovote/app/assets/javascripts/application.js",
 		"/C/Users/Kit/Sites/eurovote/eurovote/composer.json",
 		"/C/ProgramData/ComposerSetup/bin/composer.bat",
 		"/C/Users/Kit/AppData/Roaming/Sublime Text 2/Packages/Composer/composer-sublime.sublime-settings",
@@ -195,7 +218,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"C:\\Users\\Kit\\Sites\\eurovote\\provider\\assets\\stylesheets\\bootstrap",
@@ -211,6 +234,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"weight",
+			"font-family",
 			"@list",
 			"array\\(([^)]*)\\)",
 			"@foreach \\((.*) as (.*)\\)",
@@ -267,7 +292,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -275,15 +300,15 @@
 					"file": "app/controllers/CountriesController.php",
 					"settings":
 					{
-						"buffer_size": 2438,
+						"buffer_size": 4745,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								316,
-								316
+								2593,
+								2593
 							]
 						],
 						"settings":
@@ -292,52 +317,53 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1044.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/eurovote/Displayable.php",
+					"file": "app/assets/stylesheets/home.less",
 					"settings":
 					{
-						"buffer_size": 890,
+						"buffer_size": 83199,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								411,
-								411
+								1214,
+								1214
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 44.0,
+						"translation.y": 595.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/views/countries/index.twig",
+					"file": "app/views/kendo/grid.twig",
 					"settings":
 					{
-						"buffer_size": 1501,
+						"buffer_size": 98,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1358,
-								1358
+								66,
+								66
 							]
 						],
 						"settings":
@@ -346,7 +372,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 608.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

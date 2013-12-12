@@ -29,7 +29,9 @@ class CountriesController extends BaseController {
 	public function index()
 	{
 
-		$countries = $this->country->orderBy('sortas')->orderBy('slug')->get();
+		$countries = $this->country->with('cities')->orderBy('sortas')->orderBy('slug')->get();
+
+		// dd($countries->toArray());
 
 		$model = new \Kendo\Data\DataSourceSchemaModel();
 
@@ -74,9 +76,9 @@ class CountriesController extends BaseController {
 		$disambigColumn->field('disambig')
 		->title('Disambiguation');
 
-		$sortAsColumn = new \Kendo\UI\GridColumn();
-		$sortAsColumn->field('sort_as')
-		->title('Sort As');
+		// $sortAsColumn = new \Kendo\UI\GridColumn();
+		// $sortAsColumn->field('sort_as')
+		// ->title('Sort As');
 
 		$codeColumn = new \Kendo\UI\GridColumn();
 		$codeColumn->field('code')
@@ -85,15 +87,23 @@ class CountriesController extends BaseController {
 
 		$isFormerColumn = new \Kendo\UI\GridColumn();
 		$isFormerColumn->field('is_former')
-		->width('30px')
+		->width('80px')
 		->title('Former');
-
-		$grid->addColumn($nameColumn, $nameNativeColumn, $sortAsColumn, $disambigColumn, $codeColumn, $isFormerColumn);
-		$grid->dataSource($dataSource);
+//$sortAsColumn, 
+		$grid->addColumn($nameColumn, $nameNativeColumn, $disambigColumn, $codeColumn, $isFormerColumn)
+		->dataSource($dataSource)
 
 		// $grid->columnMenu(true);
-		$grid->sortable(true);
-		$grid->groupable(true);
+		->sortable(true)
+		->groupable(true)
+		->height(400)
+		->mobile(true);
+
+		$grid->detailTempate();
+
+		$pageable = new \Kendo\UI\GridPageable();
+		$pageable->pageSize(20);
+		$grid->pageable($pageable);
 
 		return View::make('kendo.grid', array('contents' => $grid->render()));
 	}
